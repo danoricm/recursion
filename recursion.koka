@@ -1,0 +1,14 @@
+fun factorial(n: int): int {
+    if n <= 1 then
+        return 1
+    else
+        return n * factorial(n - 1)
+}
+
+println("Enter an integer: ")
+input = readln()
+param = input.toInt()
+if param == 0 && input != "0" then
+    println("Invalid input")
+else
+    println("Factorial: \(factorial(param))")

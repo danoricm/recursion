@@ -1,0 +1,18 @@
+# recursion.icon
+procedure factorial(n)
+    if n <= 1 then
+        return 1
+    else
+        return n * factorial(n - 1)
+end
+
+procedure main()
+    write("Enter an integer: ")
+    input := read()
+    param := integer(input)
+    if param = 0 & input ~== "0" then {
+        write("Invalid input")
+        return
+    }
+    write("Factorial: ", factorial(param))
+end

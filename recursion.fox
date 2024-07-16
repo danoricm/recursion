@@ -1,0 +1,19 @@
+* recursion.fox
+FUNCTION Factorial(N)
+    IF N <= 1
+        RETURN 1
+    ELSE
+        RETURN N * Factorial(N - 1)
+    ENDIF
+ENDFUNC
+
+PARAMETERS input
+input = INPUTBOX("Enter an integer: ", "Input")
+param = VAL(input)
+
+IF param = 0 AND input <> "0"
+    MESSAGEBOX("Invalid input")
+ELSE
+    result = Factorial(param)
+    MESSAGEBOX("Factorial: " + TRANSFORM(result))
+ENDIF

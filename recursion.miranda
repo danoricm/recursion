@@ -1,0 +1,24 @@
+|| recursion.miranda
+
+my_function :: num -> num
+my_function param = let
+    x = param + 10
+    x' = if x > 15 then x - 5 else x + 5
+    in foldl (+) x' [0..2]
+
+main :: [char] -> [char]
+main input = 
+    let param = read input :: num
+    in if param == 0 & input /= "0"
+       then "Invalid input\n"
+       else "Factorial: " ++ show (my_function param) ++ "\n"
+
+|| Function to start the interaction
+start :: [char]
+start = 
+    "Enter an integer: " ++ "\n" ++ 
+    case getLine of
+        input -> main input
+
+|| Run the start function
+start

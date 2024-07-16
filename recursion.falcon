@@ -1,0 +1,16 @@
+// recursion.falcon
+function factorial(n)
+    if n <= 1
+        return 1
+    end
+    return n * factorial(n - 1)
+end
+
+write("Enter an integer: ")
+input = readLine()
+param = input.toInt()
+if param == 0 and input != "0"
+    write("Invalid input\n")
+else
+    write("Factorial: ", factorial(param), "\n")
+end
